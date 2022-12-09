@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply font-primary text-base font-normal mx-auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1440px;
+  }
+  input {
+    @apply outline-none;
+  }
+}
+input:focus + .error-input {
+  display: none;
+}
+.quill {
+  @apply border border-strock rounded-xl;
+  padding: 15px 25px;
+  .ql-toolbar.ql-snow {
+    border: none;
+    @apply bg-text4 bg-opacity-10 rounded-xl py-3 px-5 inline-block;
+  }
+  .ql-container.ql-snow,
+  .ql-editor {
+    @apply border-none font-primary text-sm;
+  }
+  .ql-editor {
+    @apply pt-10;
+  }
+  .ql-editor.ql-blank::before {
+    @apply text-sm not-italic text-text4;
+  }
+}
+.gradient-banner {
+  background-image: linear-gradient(
+      179.14deg,
+      rgba(32, 18, 63, 0.4) -7.14%,
+      rgba(0, 0, 0, 0.4) 87.01%
+    ),
+    url("https://images.unsplash.com/photo-1659948782675-9d4fadea983b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+}
+.shadow-1 {
+  box-shadow: -4px 4px 8px rgba(226, 226, 226, 0.2),
+    4px 4px 8px rgba(226, 226, 226, 0.2);
+}
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+// custom date picker
+body {
+  .react-date-picker {
+    @apply w-full px-6 py-4 text-sm font-medium border rounded-xl placeholder:text-text4 dark:placeholder:text-text2 dark:text-white bg-transparent border-strock text-text1 dark:border-darkStroke;
+    height: 54px;
+    .react-date-picker__wrapper {
+      @apply border-none justify-between items-center;
+    }
+    .react-date-picker__clear-button {
+      @apply hidden;
+    }
+    .react-date-picker__inputGroup {
+      min-width: 0;
+      flex-grow: 0;
+    }
+    .react-date-picker__button {
+      padding: 0;
+    }
+  }
+  .react-date-picker__calendar .react-calendar {
+    @apply border-none shadow rounded-lg;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    @apply bg-transparent;
+  }
+  .react-calendar__tile:not(.react-calendar__tile--active, .react-calendar__tile--now):enabled:hover,
+  .react-calendar__tile:not(.react-calendar__tile--active, .react-calendar__tile--now):enabled:focus {
+    @apply bg-transparent text-primary;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus,
+  .react-calendar__tile--active,
+  .react-calendar__tile--active:hover {
+    @apply bg-primary text-white rounded-lg;
+  }
+  .react-calendar__tile--now:enabled:hover,
+  .react-calendar__tile--now:enabled:focus,
+  .react-calendar__tile--now,
+  .react-calendar__tile--now:hover {
+    @apply bg-secondary text-white rounded-lg;
+  }
+}
